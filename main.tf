@@ -11,3 +11,21 @@ provider "aws" {
   region = var.aws_region
   shared_credentials_file = "~/.aws/credentials"
 }
+
+resource "aws_instance" "ec2_instance_ab_pub" {
+  ami = "ami-04e601abe3e1a910f"
+  instance_type = "t2.micro"
+  subnet_id = aws_subnet.ab_publicsubnet.id
+  tags = {
+    Name = "ab_tf_pub"
+  }
+}
+
+resource "aws_instance" "ec2_instance_ab_priv" {
+  ami = "ami-04e601abe3e1a910f"
+  instance_type = "t2.micro"
+  subnet_id = aws_subnet.ab_privatesubnet
+  tags = {
+    Name = "ab_tf_priv"
+  }
+}
