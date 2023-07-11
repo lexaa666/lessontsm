@@ -3,12 +3,12 @@ variable "aws_region" {
 }
 
 variable "vpc_cidr" {
-  cidr_block = "172.168.0.0/16"
+  cidr_block = "172.16.0.0/16"
 }
 
 variable "pubsubcidr" {
-  cidr_block = "172.168.0.0/24"
+  cidr_block = "172.16.0.0/24"
 }
 variable "prisubcidr" {
-  cidr_block = "172.168.1.0/24"
+  cidr_block = "172.16.1.0/24"
 }
