@@ -29,7 +29,7 @@ resource "aws_network_interface_sg_attachment" "sg_attachment_pub_ab" {
 resource "aws_instance" "ec2_instance_ab_priv" {
   ami = "ami-04e601abe3e1a910f"
   instance_type = "t2.micro"
-  subnet_id = aws_subnet.ab_privatesubnet
+  subnet_id = aws_subnet.ab_privatesubnet.id
   tags = {
     Name = "ab_tf_priv"
   }
