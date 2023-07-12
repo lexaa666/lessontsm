@@ -1,6 +1,6 @@
 resource "aws_security_group" "allow_http_ssh_pub" {
-  name        = "allow_http"
-  description = "Allow http inbound traffic"
+  name        = "allow_http_and_ssh_pub"
+  description = "Allow http and ssh  pub inbound traffic"
   vpc_id = aws_vpc.ab_vpc.id
   ingress {
     description = "http"
@@ -29,8 +29,8 @@ resource "aws_security_group" "allow_http_ssh_pub" {
 }
 
 resource "aws_security_group" "allow_http_ssh_priv" {
-  name        = "allow_http"
-  description = "Allow http inbound traffic"
+  name        = "allow_http_and_ssh_priv"
+  description = "Allow http and ssh priv inbound traffic"
   vpc_id = aws_vpc.ab_vpc.id
   ingress {
     description = "http"
