@@ -16,12 +16,12 @@ resource "aws_instance" "ec2_instance_ab_pub" {
   ami = "ami-04e601abe3e1a910f"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.ab_publicsubnet.id
-  
-  provisioner "remote-exec" {
+
+  provisioner "local-exec" {
     inline = [
     "sudo apt-get install nginx -y"
     ]
-  }
+    }
   tags = {
     Name = "ab_tf_pub"
   }
